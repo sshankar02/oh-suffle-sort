@@ -12,6 +12,19 @@ initialState = {
 };
 const initialStateNums = Object.keys(initialState);
 
+const getShuffledCards = (nums) => {
+    const orderedNums = nums; // immutability
+    const shuffledNums = [];
+    while (shuffledNums.length !== orderedNums.length) {
+      const random = parseInt(Math.random() * 10); // since Math.random returns floating point
+      if (random && !shuffledNums.includes(random)) {
+        shuffledNums.push(random);
+      }
+    }
+    console.log(shuffledNums);
+    return shuffledNums;
+};
+
 const renderCards = (_nums) => {
     const nums = _nums; // immutability
     const arrElements = document.querySelectorAll(".card-grid div");
@@ -21,6 +34,13 @@ const renderCards = (_nums) => {
     });
 };
 
+const sortCards = () => {
+    renderCards(initialStateNums);
+};
+const shuffleCards = () => {
+    const shuffledCards = getShuffledCards(initialStateNums);
+    renderCards(shuffledCards);
+};
 
 window.onload = function () {
     renderCards(initialStateNums);
