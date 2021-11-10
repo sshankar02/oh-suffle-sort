@@ -85,3 +85,52 @@ button:active {
     content: "";
     background-color: var(--card-color);
 }
+
+@media (min-width: 426px) {
+    .container {
+        max-width: 960px;
+        grid-template-columns: 7fr 2fr;
+        grid-template-rows: 2.5rem auto 2.5rem;
+        grid-template-areas: "header header" "cardGrid actionGrid" "credits credits";
+        background-color: #efefef;
+    }
+    .header {
+        grid-area: header;
+        background-color: #ffffff;
+        color: #000000;
+        border-bottom: 2px solid #bfbfbf;
+    }
+    .action-controls {
+        grid-area: actionGrid;
+        margin: 1.5rem;
+    }
+    .card-grid {
+        grid-area: cardGrid;
+        gap: 0rem;
+        margin: 0;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 1fr;
+    }
+    .card-grid div {
+        justify-content: start;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+        color: #fff;
+        font-size: 6vw;
+        z-index: 2;
+        position: relative;
+    }
+    .card-grid div:before {
+        position: absolute;
+        z-index: -1;
+    }
+    .credits {
+        grid-area: credits;
+    }
+    button {
+        width: 100%;
+        margin: 0.2rem 0;
+    }
+}
