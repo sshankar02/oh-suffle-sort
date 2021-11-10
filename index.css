@@ -1,7 +1,87 @@
+/* Mobile first */
 html,
 body {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    background-color: #fff;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+/* container  */
+.container {
+    height: 100%;
+    width: 100%;
+    max-width: 960px;
+    display: grid;
+    grid-template-rows: 2.5rem 3rem auto 2.5rem;
+    margin: 0 auto;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* header styling */
+.header {
+    text-align: center;
+    background-color: #333333;
+    color: #fff;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+/* action button styling */
+button {
+    background-color: #72c3dc;
+    color: #fff;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 2px solid #2b8ead;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #2b8ead;
+}
+button:active {
+    background-color: #72c3dc;
+}
+  
+/* button controls */
+.action-controls {
+    text-align: center;
+    margin: 0.5rem;
+}
+
+/* credits section */
+.credits {
+    margin: 0.5rem;
+    text-align: center;
+    font-style: italic;
+}
+  
+/* grid styling */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    gap: 0.2rem;
+    margin: 0.5rem;
+}
+.card-grid div {
+    justify-content: start;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1rem 1fr;
+    text-align: center;
+    background-color: #efefef;
+}
+.card-grid div:before {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    content: "";
+    background-color: var(--card-color);
 }
